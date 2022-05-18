@@ -1,0 +1,16 @@
+{
+  "name": "quickstart-jdbc-test-source",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
+    "tasks.max": "1",
+    "connection.url": "jdbc:mysql://mysql:3306/connect_test",
+    "connection.user": "root",
+    "connection.password": "test",
+    "mode": "incrementing",
+    "incrementing.column.name": "id",
+    "timestamp.column.name": "modified",
+    "query": "select * from connect_test.test",
+    "poll.interval.ms": "1000",
+    "topic.prefix": "quickstart-jdbc-test-source"
+  }
+}

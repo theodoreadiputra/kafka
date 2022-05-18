@@ -1,0 +1,16 @@
+{
+  "name": "test-sink",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "topics": "quickstart-jdbc-test-source",
+    "connection.url": "jdbc:mysql://mysql:3306/connect_test",
+    "connection.user": "root",
+    "connection.password": "test",
+    "insert.mode": "upsert",
+    "table.name.format": "test-sink",
+    "pk.mode":"record_value",
+    "pk.fields":"id",
+    "auto.create": "true",
+    "auto.evolve": "true"
+  }
+}
