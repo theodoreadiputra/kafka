@@ -124,7 +124,7 @@ services:
     image: cnfldemos/cp-server-connect-datagen:0.5.0-6.2.0
     container_name: connect
     depends_on:
-      # - postgres
+      - postgres
       # - postgres-target
       - broker
       - schema-registry
@@ -210,3 +210,11 @@ services:
   #     STREAMS_BOOTSTRAP_SERVERS: broker:9092
   #     STREAMS_SCHEMA_REGISTRY_HOST: schema-registry
   #     STREAMS_SCHEMA_REGISTRY_PORT: 8081
+
+  postgres:
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    environment:
+     - POSTGRES_USER=root
+     - POSTGRES_PASSWORD=password@main-dev
